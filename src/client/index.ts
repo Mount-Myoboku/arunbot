@@ -21,6 +21,7 @@ Commands.forEach((cmd) => {
 });
 
 client.on("message", (message) => {
+    console.log("message received: ", message.content);
     if (!message.content.startsWith(cmdPrefix) || message.author.bot) {
         return;
     }
@@ -29,6 +30,7 @@ client.on("message", (message) => {
     const cmd = (args || []).shift()?.toLowerCase() || "";
 
     if (!client.commands.has(cmd)) {
+        console.debug("message does not match a known command", message);
         return;
     }
 
