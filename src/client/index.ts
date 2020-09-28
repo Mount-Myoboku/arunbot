@@ -1,10 +1,10 @@
 import * as Discord from "discord.js";
 
 import conf from "../config";
-import { Commands } from "./cmd";
+import { Commands, Command } from "./cmd";
 
 class ClientWithCommands extends Discord.Client {
-    public commands: Discord.Collection<string, any>;
+    public commands: Discord.Collection<string, Command>;
 
     constructor() {
         super();
@@ -32,7 +32,7 @@ client.on("message", (message) => {
         return;
     }
 
-    client.commands.get(cmd).execute(message, args);
+    client.commands.get(cmd)?.execute(message, args);
 });
 
 client.on("error", (err) => {
