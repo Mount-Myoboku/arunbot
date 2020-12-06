@@ -1,6 +1,7 @@
 import * as Discord from "discord.js";
 
 import conf from "../config";
+
 import { Commands, Command } from "./cmd";
 
 class ClientWithCommands extends Discord.Client {
@@ -20,7 +21,7 @@ Commands.forEach((cmd) => {
     client.commands.set(cmd.name, cmd);
 });
 
-client.on("message", (message) => {
+client.on("message", async (message) => {
     console.log("message received: ", message.content);
     if (!message.content.startsWith(cmdPrefix) || message.author.bot) {
         return;
@@ -34,7 +35,7 @@ client.on("message", (message) => {
         return;
     }
 
-    client.commands.get(cmd)?.execute(message, args);
+    await client.commands.get(cmd)?.execute(message, args);
 });
 
 client.on("error", (err) => {
