@@ -1,3 +1,3 @@
-import { conf } from "./conf";
+import { conf } from './conf';
 
 export default conf;

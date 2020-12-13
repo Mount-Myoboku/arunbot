@@ -24,6 +24,7 @@
   "scripts": {
     "build": "tsc",
     "start:local": "node ./build/index.js",
-    "lint": "eslint --ext json,js,tsx,ts ./src"
+    "lint": "eslint --ext json,js,tsx,ts ./src",
+    "build:watch": "tsc -w"
   }
 }

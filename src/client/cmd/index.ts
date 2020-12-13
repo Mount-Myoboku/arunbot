@@ -1,7 +1,7 @@
-import Discord from "discord.js";
+import Discord from 'discord.js';
 
-import { NickNameUpdate } from "./nick-update";
-import { Ping } from "./ping";
+import { NickNameUpdate } from './nick-update';
+import { Ping } from './ping';
 
 export const Commands: Command[] = [Ping, NickNameUpdate];
 

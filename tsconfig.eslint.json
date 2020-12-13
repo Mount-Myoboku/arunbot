@@ -7,7 +7,7 @@
         ".prettierrc.json",
         "tsconfig.eslint.json",
         "tsconfig.json",
-        ".eslint.js"
+        ".eslintrc.js"
     ],
     "exclude": ["node_modules", "dist", "**/*.png", "**/*.svg", "package.json"]
 }
